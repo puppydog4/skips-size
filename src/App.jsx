@@ -1,5 +1,7 @@
+import ChooseSkip from "./pages/ChoseSkip";
+
 function App() {
-  return <h1 class="text-red-700">Hello World</h1>;
+  return <ChooseSkip />;
 }
 
 export default App;
