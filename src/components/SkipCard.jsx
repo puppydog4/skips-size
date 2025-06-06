@@ -1,4 +1,5 @@
 import { Card, CardContent } from "./ui/card";
+import skipImage from "/skip.webp"; // Adjust the path as necessary
 
 export default function SkipCard({ skip, onSelect, selected }) {
   const { size, price_before_vat, allowed_on_road } = skip;
@@ -15,9 +16,9 @@ export default function SkipCard({ skip, onSelect, selected }) {
       <CardContent className="flex flex-col gap-4 p-0 hover:animate-pulse">
         <div className="relative">
           <img
-            src="src/assets/skip.jpg"
+            src={skipImage}
             alt={`${size} yard skip`}
-            className="w-full h-60 object-cover rounded-md"
+            className="w-full h-60 object-cover rounded-md max"
           />
           {!allowed_on_road && (
             <div className="absolute bottom-2 left-2 bg-black text-amber-300 text-xs font-semibold px-2 py-1 rounded shadow">
