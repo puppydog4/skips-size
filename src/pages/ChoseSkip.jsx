@@ -32,7 +32,7 @@ const ChooseSkip = () => {
         Choose Your Skip Size
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="flex flex-wrap gap-6 justify-center">
         {skipSizes.map((skip) => (
           <SkipCard
             key={skip.id}
