@@ -29,4 +29,4 @@ https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft
 
 ## 🔗 Live Demo
 
-[(https://codesandbox.io/p/github/puppydog4/skips-size/main)]
+https://codesandbox.io/p/github/puppydog4/skips-size/main
