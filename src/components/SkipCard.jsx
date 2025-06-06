@@ -5,19 +5,14 @@ export default function SkipCard({ skip, onSelect, selected }) {
 
   return (
     <Card
-      className={`w-full max-w-md p-4 shadow-md transition-all duration-200 border-2 m-4 hover:bg-amber-50 hover:shadow-lg cursor-pointer transform hover:scale-105 ${
+      className={`w-full max-w-md p-4 shadow-md transition-all duration-200  hover:bg-amber-50 hover:shadow-lg cursor-pointer transform hover:scale-105 ${
         selected
           ? "border-amber-400 bg-amber-50 shadow-lg"
           : "border-gray-200 hover:border-amber-300"
       }`}
       onClick={() => onSelect(skip)}
     >
-      <CardContent className="flex flex-col gap-4 p-0">
-        {selected && (
-          <div className="bg-amber-400 text-black font-bold text-center py-2 rounded-md animate-pulse">
-            ✓ Selected
-          </div>
-        )}
+      <CardContent className="flex flex-col gap-4 p-0 hover:animate-pulse">
         <div className="relative">
           <img
             src="src/assets/skip.jpg"
@@ -34,9 +29,9 @@ export default function SkipCard({ skip, onSelect, selected }) {
           </div>
         </div>
         <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-gray-900">
+          <h2 className="text-lg font-semibold text-gray-900">
             {size} Yard Skip
-          </h3>
+          </h2>
           <p className="text-sm text-gray-600">14 day hire period</p>
           <div className="flex items-center justify-between">
             <span className="text-xl font-bold text-amber-600">

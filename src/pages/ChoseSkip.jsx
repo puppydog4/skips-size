@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "../components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../components/ui/card";
-import {
   Drawer,
   DrawerContent,
   DrawerHeader,
@@ -16,6 +9,7 @@ import {
   DrawerClose,
 } from "../components/ui/drawer";
 import { fetchSkips } from "../services/fetchSkips";
+import SkipCard from "../components/SkipCard";
 
 const ChooseSkip = () => {
   const [skipSizes, setSkipSizes] = useState([]);
@@ -40,46 +34,15 @@ const ChooseSkip = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {skipSizes.map((skip) => (
-          <Card
-            key={skip.size}
-            className="hover:shadow-lg transition-shadow duration-300"
-          >
-            <CardHeader>
-              <CardTitle className="text-2xl font-semibold">
-                {skip.size} Yard Skip
-              </CardTitle>
-              <CardDescription>
-                Perfect for{" "}
-                {skip.size <= 6 ? "small to medium projects" : "large projects"}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <img
-                  src="src/assets/skip.jpg"
-                  alt={`${skip.size} yard skip`}
-                  className="w-full h-32 object-cover rounded-md"
-                />
-                <div className="flex items-center justify-between">
-                  <span className="text-xl font-bold text-amber-600">
-                    £{skip.price_before_vat}
-                  </span>
-                  <span className="text-sm text-gray-500">
-                    (Price before VAT)
-                  </span>
-                </div>
-                <Button
-                  onClick={() => {
-                    setSelectedSkip(skip);
-                    setShowDialog(true);
-                  }}
-                  className="w-full bg-amber-500 hover:bg-amber-600"
-                >
-                  View Details
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          <SkipCard
+            key={skip.id}
+            skip={skip}
+            onSelect={(selected) => {
+              setSelectedSkip(selected);
+              setShowDialog(true);
+            }}
+            selected={selectedSkip?.id === skip.id}
+          />
         ))}
       </div>
 
